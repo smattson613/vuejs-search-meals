@@ -9,7 +9,7 @@
         </router-link>
         <div class="p-3">
             <h3 class="p-3 pl-0 font-bold">{{ meal.strMeal }}</h3>
-            <p>{{ meal.strInstructions.substring(0, 100) }}</p>
+            <p>{{ meal.strInstructions }}</p>
             <div class="pt-3 flex items-center justify-between">
                 <YouTubeButton :href="meal.strYoutube">YouTube</YouTubeButton>
             </div>
@@ -22,7 +22,10 @@ import YouTubeButton from './YouTubeButton.vue';
 
 
 const { meal } = defineProps({
-    meal: Object
+    meal: {
+        required: true,
+        type : Object
+    }
 })
 
 </script>
